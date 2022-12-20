@@ -43,6 +43,11 @@
             <artifactId>unirest-java</artifactId>
             <version>1.4.9</version>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20220924</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -65,7 +70,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>foodie.gj.foodie/foodie.gj.foodie.HelloApplication</mainClass>
+                            <mainClass>foodie.gj.foodie/foodie.gj.foodie.model.HelloApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -90,7 +95,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <!-- add the full name to your class containing the main()-method -->
-                            <mainClass>foodie.gj.foodie/foodie.gj.foodie.HelloApplication</mainClass>
+                            <mainClass>foodie.gj.foodie/foodie.gj.foodie.model.HelloApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -108,7 +113,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>foodie.gj.foodie/foodie.gj.foodie.HelloApplication</mainClass>
+                                    <mainClass>foodie.gj.foodie/foodie.gj.foodie.model.HelloApplication</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

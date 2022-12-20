@@ -1,4 +1,4 @@
-package foodie.gj.foodie;
+package foodie.gj.foodie.control;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
