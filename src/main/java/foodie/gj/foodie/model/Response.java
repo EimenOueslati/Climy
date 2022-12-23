@@ -11,11 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Response {
-    private String host;
-    private String charSet;
-    private String x_host;
-    private String x_key;
-    private Map<String, String> infoMAp;
+    private final String host;
+    private final String charSet;
+    private final String x_host;
+    private final String x_key;
+    private int statusCode;
+    private final HashMap<String, String> infoMAp;
     public Response(){
         host = "https://weatherapi-com.p.rapidapi.com/current.json";
         charSet = "UTF-8";
@@ -25,17 +26,13 @@ public class Response {
         initialize(infoMAp);
     }
 
-    public boolean printWeather(String location) throws UnirestException, UnsupportedEncodingException {
+    public int getStatusCode(){return statusCode;}
+
+    public Map<String, String> getInfoMap(String location) throws UnirestException, UnsupportedEncodingException {
         if(fillMap(location)) {
-            ArrayList<String> keys = new ArrayList<>(infoMAp.keySet());
-            ArrayList<String> values = new ArrayList<>(infoMAp.values());
-            for(int i = 0; i < keys.size(); i++)
-            {
-                System.out.println(keys.get(i) + ": " + values.get(i));
-            }
-            return true;
+            return infoMAp;
         }
-        return false;
+        return null;
     }
 
     private boolean fillMap(String location) throws UnirestException, UnsupportedEncodingException {
@@ -45,7 +42,8 @@ public class Response {
                 .header("x-rapidapi-host", x_host)
                 .header("x-rapidapi-key", x_key)
                 .asJson();
-        if(response.getStatus() != 200){return false;}
+        statusCode = response.getStatus();
+        if(statusCode != 200){return false;}
         System.out.println(response.getBody().getObject().getJSONObject("location").getString("name"));
 
         infoMAp.replace("Country", response.getBody().getObject().getJSONObject("location").getString("country"));
@@ -54,13 +52,13 @@ public class Response {
         infoMAp.replace("Is Day", ((response.getBody().getObject().getJSONObject("current").getInt("is_day")) == 1) ? "yes" : "no");
         infoMAp.replace("State", response.getBody().getObject().getJSONObject("current").getJSONObject("condition").getString("text"));
         infoMAp.replace("Current temperature", response.getBody().getObject().getJSONObject("current").getInt("temp_c") + " °C");
-        infoMAp.replace("Feels like", response.getBody().getObject().getJSONObject("current").getFloat("feelslike_c") + " °C");                    //  getInt("feelslike_c") + " °C");
+        infoMAp.replace("Feels like", response.getBody().getObject().getJSONObject("current").getFloat("feelslike_c") + " °C");
         infoMAp.replace("Wind speed", response.getBody().getObject().getJSONObject("current").getInt("wind_kph") + " kph");
         infoMAp.replace("Precipitation", response.getBody().getObject().getJSONObject("current").getInt("precip_mm") + " mm");
         return true;
     }
 
-    private void initialize(Map x)
+    private void initialize(HashMap<String, String> x)
     {
         infoMAp.put("Country", "");
         infoMAp.put("City", "");

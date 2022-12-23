@@ -70,7 +70,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>foodie.gj.foodie/foodie.gj.foodie.model.HelloApplication</mainClass>
+                            <mainClass>foodie.gj.foodie/foodie.gj.foodie.Main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -95,7 +95,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <!-- add the full name to your class containing the main()-method -->
-                            <mainClass>foodie.gj.foodie/foodie.gj.foodie.model.HelloApplication</mainClass>
+                            <mainClass>foodie.gj.foodie/foodie.gj.foodie.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -113,7 +113,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>foodie.gj.foodie/foodie.gj.foodie.model.HelloApplication</mainClass>
+                                    <mainClass>foodie.gj.foodie/foodie.gj.foodie.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

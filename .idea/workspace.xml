@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bc8e865-84bb-4eaa-a022-76efca23e7da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/model/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/model/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/control/InfoPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/foodie/gj/foodie/info-page.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/foodie/gj/foodie/main-page.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/foodie/gj/foodie/style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/control/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/control/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/control/MainPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/model/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/model/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foodie/gj/foodie/model/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foodie/gj/foodie/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/foodie/gj/foodie/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/foodie/gj/foodie/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -34,22 +37,34 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Ioo1J9idhkmd6uitzRrCLCDnj8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ayman\IdeaProjects\Foodie\src\main\resources\foodie\gj\foodie" />
+      <recent name="C:\Users\ayman\IdeaProjects\Foodie\src\main\resources\foodie\gj\foodie\style" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="foodie.gj.foodie" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="foodie.gj.foodie.model.HelloApplication" />
-      <module name="Foodie" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="foodie.gj.foodie.Main" />
+      <module name="Climy" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="foodie.gj.foodie.control.*" />
@@ -62,7 +77,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -82,11 +97,31 @@
       <option name="project" value="LOCAL" />
       <updated>1671435816005</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created the class responsible for takin the response from the API and processing it into the map to be displayed to the user.">
+      <created>1671524921248</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671524921248</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Updated the pom file with the necessary dependencies and added some plugins." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the pom file with the necessary dependencies and added some plugins." />
+    <MESSAGE value="Created the class responsible for takin the response from the API and processing it into the map to be displayed to the user." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the class responsible for takin the response from the API and processing it into the map to be displayed to the user." />
   </component>
 </project>

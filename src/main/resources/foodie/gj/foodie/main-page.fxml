@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="foodie.gj.foodie.control.MainPageController">
+    <center>
+        <BorderPane prefHeight="510.0" prefWidth="778.0" BorderPane.alignment="CENTER">
+            <top>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="89.0" prefWidth="290.0" styleClass="title" stylesheets="@style/style.css" text="Welcome to the weather app" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <BorderPane.margin>
+                        <Insets top="50.0" />
+                    </BorderPane.margin>
+                </Label>
+            </top>
+            <center>
+                <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <center>
+                        <TextField fx:id="cityNameField" alignment="CENTER" prefHeight="41.0" prefWidth="278.0" promptText="please enter city naem" BorderPane.alignment="CENTER">
+                            <BorderPane.margin>
+                                <Insets left="250.0" right="250.0" />
+                            </BorderPane.margin>
+                        </TextField>
+                    </center>
+                    <top>
+                        <BorderPane prefHeight="100.0" prefWidth="778.0" BorderPane.alignment="CENTER">
+                            <left>
+                                <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#OnAboutClicked" prefHeight="55.0" prefWidth="100.0" styleClass="btn" text="About" BorderPane.alignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <BorderPane.margin>
+                                        <Insets left="250.0" />
+                                    </BorderPane.margin>
+                                </Button>
+                            </left>
+                            <right>
+                                <Button mnemonicParsing="false" onAction="#onHelpClicked" prefHeight="55.0" prefWidth="100.0" styleClass="btn" text="Help" BorderPane.alignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <BorderPane.margin>
+                                        <Insets right="250.0" />
+                                    </BorderPane.margin>
+                                </Button>
+                            </right>
+                        </BorderPane>
+                    </top>
+                    <bottom>
+                        <Button mnemonicParsing="false" onAction="#OnEnterClicked" prefHeight="55.0" prefWidth="100.0" styleClass="btn" text="search" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                            <BorderPane.margin>
+                                <Insets bottom="50.0" />
+                            </BorderPane.margin>
+                        </Button>
+                    </bottom>
+                </BorderPane>
+            </center>
+        </BorderPane>
+    </center>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#onExitClicked" prefHeight="55.0" prefWidth="100.0" text="Exit" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </bottom>
+</BorderPane>
