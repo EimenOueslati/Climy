@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -43,7 +44,7 @@ public class MainPageController implements Initializable {
         }
         else {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("info-page.fxml"));
-            Scene scene = new Scene(loader.load(), 800, 550);
+            Scene scene = new Scene(loader.load(), 750, 520);
             Stage stage = (Stage) cityNameField.getScene().getWindow();
             InfoPageController controller = loader.getController();
             controller.initiatePage(text);
@@ -71,10 +72,12 @@ public class MainPageController implements Initializable {
 
     private static boolean containsNumbers(String text) {
         for (char c : text.toCharArray()) {
-            if (Character.isDigit(c)) {
+            if (!Character.isAlphabetic(c)) {
                 return true;
             }
         }
         return false;
     }
+
+
 }

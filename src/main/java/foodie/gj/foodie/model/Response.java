@@ -29,13 +29,11 @@ public class Response {
     public int getStatusCode(){return statusCode;}
 
     public Map<String, String> getInfoMap(String location) throws UnirestException, UnsupportedEncodingException {
-        if(fillMap(location)) {
-            return infoMAp;
-        }
-        return null;
+        fillMap(location);
+        return infoMAp;
     }
 
-    private boolean fillMap(String location) throws UnirestException, UnsupportedEncodingException {
+    private void fillMap(String location) throws UnirestException, UnsupportedEncodingException {
         String query = String.format("q=%s",
                 URLEncoder.encode(location, charSet));
         HttpResponse<JsonNode> response = Unirest.get(host + "?" + query)
@@ -43,9 +41,7 @@ public class Response {
                 .header("x-rapidapi-key", x_key)
                 .asJson();
         statusCode = response.getStatus();
-        if(statusCode != 200){return false;}
-        System.out.println(response.getBody().getObject().getJSONObject("location").getString("name"));
-
+        if(statusCode != 200){return;}
         infoMAp.replace("Country", response.getBody().getObject().getJSONObject("location").getString("country"));
         infoMAp.replace("City", response.getBody().getObject().getJSONObject("location").getString("name"));
         infoMAp.replace("Local time", response.getBody().getObject().getJSONObject("location").getString("localtime"));
@@ -55,7 +51,6 @@ public class Response {
         infoMAp.replace("Feels like", response.getBody().getObject().getJSONObject("current").getFloat("feelslike_c") + " °C");
         infoMAp.replace("Wind speed", response.getBody().getObject().getJSONObject("current").getInt("wind_kph") + " kph");
         infoMAp.replace("Precipitation", response.getBody().getObject().getJSONObject("current").getInt("precip_mm") + " mm");
-        return true;
     }
 
     private void initialize(HashMap<String, String> x)
@@ -71,4 +66,7 @@ public class Response {
         infoMAp.put("Precipitation", "");
     }
 
+    public Map<String, String> getEmptyInfoMap() {
+        return infoMAp;
+    }
 }

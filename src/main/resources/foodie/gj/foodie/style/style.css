@@ -1,7 +1,47 @@
-.title{
-    display: inline;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: #343a40;
-    padding: 0 10px;
-    border-radius: 5px;
+#title{
+    -fx-display: inline;
+    -fx-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -fx-color: #343a40;
+    -fx-padding: 0 10px;
+    -fx-border-radius: 5px;
   }
+
+  .main-div{
+    -fx-background-color: #1D1E22;
+  }
+
+  .btn{
+      -fx-cursor: pointer;
+      -fx-transition: all 0.3s;
+      -fx-border:none;
+      -fx-border-radius: 10px;
+      -fx-background-radius: 10;
+      -fx-color:#dee2e6;
+    }
+
+    .btn-main{
+      -fx-background-color: #087f5b;
+    }
+    .btn-main:hover,
+    .btn-main:active{
+      -fx-background-color: #0ca678;
+      -fx-color:#f8f9fa
+    }
+    .btn-main:active{
+      -fx-translate-y: 5px;
+    }
+
+    .btn-secondary{
+      -fx-background-color: #0b7285;
+    }
+    .btn-secondary:hover,
+    .btn-secondary:active{
+      -fx-background-color: #1098ad;
+      -fx-color:#f8f9fa
+    }
+    .btn-secondary:active{
+      -fx-translate-y: 5px;
+    }
+    .menuBar{
+      -fx-background-color: #343A40;
+    }

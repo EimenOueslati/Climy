@@ -9,6 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.UnsupportedEncodingException;
@@ -25,8 +27,9 @@ public class InfoPageController implements Initializable {
     @FXML public Label feelsLike;
     @FXML public Label perc;
     @FXML public Label windSpeed;
-    public Label cityName;
-    public TextField cityNameTF;
+    @FXML public Label cityName;
+    @FXML public TextField cityNameTF;
+    @FXML public ImageView searchlogo;
 
     private Response response;
 
@@ -34,23 +37,24 @@ public class InfoPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 
     public void initiatePage(String text) throws UnirestException, UnsupportedEncodingException {
         response = new Response();
+        infoMap = response.getEmptyInfoMap();
         infoMap = response.getInfoMap(text);
         fillInfo(text);
     }
 
     private void fillInfo(String text) throws UnirestException, UnsupportedEncodingException {
-        if(response.getStatusCode() == 401)
+        response.getInfoMap(text);
+        if(response.getStatusCode() == 400)
         {
-            new Alert(Alert.AlertType.WARNING, "No matching location found. Please refrain from using non-ASCII characters." +
-                    "Please replace those characters with:" +
-                    "å => aa" +
-                    "ø => o" +
-                    "æ => ae");
+            new Alert(Alert.AlertType.WARNING, """
+                    No matching location found. Please refrain from using non-ASCII characters.Please replace those characters with:
+                    å => aa
+                    ø => o
+                    æ => ae""").show();
         } else if (response.getStatusCode() == 200) {
             infoMap = response.getInfoMap(text);
             cityName.setText(text.toUpperCase());
@@ -62,6 +66,8 @@ public class InfoPageController implements Initializable {
             feelsLike.setText(infoMap.get("Feels like"));
             windSpeed.setText(infoMap.get("Wind speed"));
             perc.setText(infoMap.get("Precipitation"));
+        }else {
+            new Alert(Alert.AlertType.ERROR, "An unexpected error has occurred please restart the application").show();
         }
     }
 
@@ -79,5 +85,20 @@ public class InfoPageController implements Initializable {
 
     public void onExitClicked(ActionEvent actionEvent) {
         Main.exitConfirmation((Stage) country.getScene().getWindow());
+    }
+
+    public void onBoutMenuClicked(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "This weather application was developed by Eimen Ouesalati " +
+                "and Soufiane Orkia. The app was developed with java and css. To report bugs or suggest new feature " +
+                "please contact us at aymanoueslati22@gmail.com");
+        alert.show();
+
+    }
+
+    public void onHelpMenuClicked(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "To use the app, just enter a city name in the text field " +
+                "and the click in the search button. You will be taken to a page with the weather information of the city " +
+                "you entered. There will be another text field where you can preform further searches");
+        alert.show();
     }
 }
