@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.util.Map;
@@ -38,7 +39,7 @@ public class InfoPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
-    public void initiatePage(String text) throws UnirestException, UnsupportedEncodingException {
+    public void initiatePage(String text) throws UnirestException, IOException {
         response = new Response();
         infoMap = response.getEmptyInfoMap();
         infoMap = response.getInfoMap(text);
@@ -88,14 +89,16 @@ public class InfoPageController implements Initializable {
 
     public void onBoutMenuClicked(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION, "This weather application was developed by Eimen Ouesalati " +
-                "and Soufiane Orkia. The app was developed with java and css. To report bugs or suggest new feature " +
+                " The app was developed using javafx. To report bugs or suggest new feature " +
                 "please contact us at aymanoueslati22@gmail.com");
         alert.show();
 
     }
 
     public void onHelpMenuClicked(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "To use the app, just enter a city name in the text field " +
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "To use the app, you need an API key for the weather api. you can get a free key by signing up "+
+                " at https://rapidapi.com and subscribing to the weatherapi at https://rapidapi.com/weatherapi/api/weatherapi-com/ "+
+                " After that you can just enter a city name in the text field " +
                 "and the click in the search button. You will be taken to a page with the weather information of the city " +
                 "you entered. There will be another text field where you can preform further searches");
         alert.show();

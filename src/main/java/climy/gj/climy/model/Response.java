@@ -4,11 +4,15 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import java.io.UnsupportedEncodingException;
+
+import java.io.*;
 import java.net.URLEncoder;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class Response {
     private final String host;
@@ -17,11 +21,11 @@ public class Response {
     private final String x_key;
     private int statusCode;
     private final HashMap<String, String> infoMAp;
-    public Response(){
+    public Response() throws IOException {
         host = "https://weatherapi-com.p.rapidapi.com/current.json";
         charSet = "UTF-8";
         x_host = "weatherapi-com.p.rapidapi.com";
-        x_key = "89e1b2e058mshcb24ce92222c1f4p133c45jsn580e0f0c496c";
+        x_key = readKey();
         infoMAp = new HashMap<>();
         initialize(infoMAp);
     }
@@ -68,5 +72,25 @@ public class Response {
 
     public Map<String, String> getEmptyInfoMap() {
         return infoMAp;
+    }
+
+    private String readKey() throws IOException {
+        Path path = Paths.get("src/main/resources/climy/gj/climy/key.txt");
+        String line;
+        try (BufferedReader reader = new BufferedReader(new FileReader(path.toString()))) {
+            line = reader.readLine();
+            return line;
+        }
+    }
+
+    public static boolean  isValidKey(String key) throws UnsupportedEncodingException, UnirestException {
+        String query = String.format("q=%s",
+                URLEncoder.encode("oslo", "UTF-8"));
+        HttpResponse<JsonNode> response = Unirest.get("https://weatherapi-com.p.rapidapi.com/current.json" + "?" + query)
+                .header("x-rapidapi-host", "weatherapi-com.p.rapidapi.com")
+                .header("x-rapidapi-key", key)
+                .asJson();
+        int statusCode = response.getStatus();
+        return statusCode == 200;
     }
 }
