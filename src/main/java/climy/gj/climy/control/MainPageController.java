@@ -1,21 +1,15 @@
-package foodie.gj.foodie.control;
+package climy.gj.climy.control;
 
+import climy.gj.climy.Main;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import foodie.gj.foodie.Main;
-import foodie.gj.foodie.model.Response;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="520.0" prefWidth="750.0" styleClass="main-div" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="foodie.gj.foodie.control.InfoPageController">
+<AnchorPane prefHeight="520.0" prefWidth="750.0" styleClass="main-div" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="climy.gj.climy.control.InfoPageController">
    <children>
       <Label fx:id="cityName" layoutX="35.0" layoutY="115.0" prefHeight="39.0" prefWidth="325.0" text="city name" textFill="#dee2e6">
          <font>

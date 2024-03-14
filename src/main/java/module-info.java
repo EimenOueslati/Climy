@@ -1,14 +1,14 @@
-module foodie.gj.foodie {
+module climy.gj.climy {
     requires javafx.controls;
     requires javafx.fxml;
     requires unirest.java;
     requires org.json;
 
 
-    opens foodie.gj.foodie to javafx.fxml;
-    exports foodie.gj.foodie.control;
-    opens foodie.gj.foodie.control to javafx.fxml;
-    exports foodie.gj.foodie.model;
-    opens foodie.gj.foodie.model to javafx.fxml;
-    exports foodie.gj.foodie;
+    opens climy.gj.climy to javafx.fxml;
+    exports climy.gj.climy.control;
+    opens climy.gj.climy.control to javafx.fxml;
+    exports climy.gj.climy.model;
+    opens climy.gj.climy.model to javafx.fxml;
+    exports climy.gj.climy;
 }

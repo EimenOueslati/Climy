@@ -1,4 +1,4 @@
-package foodie.gj.foodie.model;
+package climy.gj.climy.model;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;

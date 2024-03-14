@@ -1,7 +1,5 @@
-package foodie.gj.foodie;
+package climy.gj.climy;
 
-import com.mashape.unirest.http.exceptions.UnirestException;
-import foodie.gj.foodie.model.Response;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,8 +8,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.Scanner;
 
 public class Main extends Application {
 
