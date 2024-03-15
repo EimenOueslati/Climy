@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bc8e865-84bb-4eaa-a022-76efca23e7da" name="Changes" comment="Finalized the gui and connected it to the controllers. Added some more error checking and some styling.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/climy/gj/climy/key.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/climy/gj/climy/control/InfoPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/climy/gj/climy/control/InfoPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/climy/gj/climy/control/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/climy/gj/climy/control/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/climy/gj/climy/model/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/climy/gj/climy/model/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/climy/gj/climy/main-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/climy/gj/climy/main-page.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +117,8 @@
       <workItem from="1709323606214" duration="407000" />
       <workItem from="1709461698930" duration="375000" />
       <workItem from="1710416312790" duration="542000" />
-      <workItem from="1710416898014" duration="11016000" />
+      <workItem from="1710416898014" duration="11673000" />
+      <workItem from="1710513674790" duration="1681000" />
     </task>
     <task id="LOCAL-00001" summary="Updated the pom file with the necessary dependencies and added some plugins.">
       <created>1671435816005</created>
