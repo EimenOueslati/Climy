@@ -29,10 +29,12 @@ As mentioned before the dependencies for the project are managed using maven. Th
 # Showcase
 
 The application starts in the main menu view which looks like this:
+![Alt text](Showcase/mainPage.png)
 
 The first steps is the input the API key:
 
 afterwards you can start looking up weather infomation using the search functionality:
+![Alt text](Showcase/infoPage.png)
 
 # Further development plans
 
